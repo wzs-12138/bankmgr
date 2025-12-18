@@ -1,6 +1,6 @@
 #include"interest.h"
 
-double interest(struct Account p,struct Date day1){//p为用户，day1 为存款到期日期
+long long interest(struct Account p,struct Date day1){//p为用户，day1 为存款到期日期
         Date day2 = p.creationDate;//开户日期
     int differ = day1 - day2;
     long long balance_1 = p.balance;//保存原存款
@@ -18,5 +18,5 @@ double interest(struct Account p,struct Date day1){//p为用户，day1 为存款
             else p.balance *= 1.04;//定期第三年及之后的每一年。
         }
     }
-    return 1.0*(p.balance - balance_1)/100;
+    return 1.0*(p.balance - balance_1);
 }
